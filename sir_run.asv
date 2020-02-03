@@ -17,7 +17,6 @@ data_len = length(Date);
 dates=start_date + t;
 
 % plot the the full SIR graph 
-figure;
 plot(dates, x(:,1),'-', dates, x(:,2), '--', dates, x(:,3), '-.k')
 title('Full SIR');
 xlabel('date');
@@ -25,9 +24,8 @@ ylabel('numbers');
 legend('Susceptible', 'Infected', 'Removed', '3');
 
 % Plot Susceptible
-figure;
 len = length(Date) ;
-plot(dates(1:len+30), x(1:len+30,1), '--');
+plot(dates(1:len+20), x(1:len+20,1), '--');
 hold on
 idates=datetime(Date);
 plot(idates(1:len), Susceptible, '-o') ;
@@ -35,37 +33,33 @@ plot(idates(1:len), Susceptible, '-o') ;
 title('Susceptible ');
 xlabel('date');
 ylabel('numbers');
-legend( 'sir', 'weijianwei','2');
+legend( 'sir', 'data','2');
 hold off
 
-
-% Plot Infected
-figure;
+% Plot Susceptible
 len = length(Date) ;
-plot(dates(1:len+60), x(1:len+60,2), '--');
+plot(dates(1:len+20), x(1:len+20,1), '--');
+hold on
+idates=datetime(Date);
+plot(idates(1:len), Susceptible, '-o') ;
+
+title('Susceptible ');
+xlabel('date');
+ylabel('numbers');
+legend( 'sir', 'data','2');
+hold off
+
+% Plot Injected
+len = length(Date) ;
+plot(dates(1:len+20), x(1:len+20,2), '--');
 hold on
 idates=datetime(Date);
 plot(idates(1:len), Infected, '-o') ;
 
-title('Infected ');
+title('Injected ');
 xlabel('date');
 ylabel('numbers');
-legend( 'sir', 'weijianwei','2');
-hold off
-
-
-% Plot Removed (recovered and dead)
-figure;
-len = length(Date) ;
-plot(dates(1:len+30), x(1:len+30,3), '--');
-hold on
-idates=datetime(Date);
-plot(idates(1:len), Removed, '-o') ;
-
-title('Removed ');
-xlabel('date');
-ylabel('numbers');
-legend( 'sir', 'weijianwei','2');
+legend( 'sir', 'data','2');
 hold off
 
 % test data fitness
