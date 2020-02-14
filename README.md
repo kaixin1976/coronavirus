@@ -6,3 +6,6 @@ You can run sir_t_run.m in matlab which uses the dynamic lamda (infective rate) 
 You probably think the model exaggerate the situation , however, that is the best optimzation  I could get now. 
 
 Regarding what is SIR (Susceptible-Infected-Removed ) Model， it is a famous epidemic projection model,  please get more information from Internet or read the book (in Chinese, that how I learn SIR) I put in the repository .
+
+There's a blog to describe the model in more details .
+https://www.cnblogs.com/nightbreeze/p/12306613.html
